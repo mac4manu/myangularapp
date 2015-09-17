@@ -1,0 +1,23 @@
+{
+  "name": "my-angular-app",
+  "version": "1.0.0",
+  "description": "My first Angular App",
+  "main": "index.html",
+  "authors": [
+    "mac4manu@icloud.com"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.5",
+    "bootstrap": "~3.3.5",
+"lodash": "~3.10.1",
+"jquery":"~2.1.4"
+  }
+}
