@@ -1,0 +1,38 @@
+<div ng-show="isDataAvailable">
+	<div class="dropdown">
+	 <span>Sort By</span>
+	  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+	    {{filterLabel}}
+	    <span class="caret"></span>
+	  </button>
+	  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+	    <li ng-click="setTab(1,'Index','id')"><a href="#"><span ng-show="filter===1" class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp;Index</a></li>
+	    <li ng-click="setTab(2,'Title','title')"><a href="#"><span ng-show="filter===2" class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp;Title</a></li>
+	    <li ng-click="setTab(3,'Author','authors')"><a href="#"><span  ng-show="filter===3" class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp;Author</a></li>
+	    <li ng-click="setTab(4,'Ratings','averageRating')"><a href="#"><span ng-show="filter===4" class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>&nbsp;Ratings</a></li>
+	  </ul>
+	</div>
+</hr>
+<div class="media" ng-repeat="book in books track by book.id">
+  <div class="media-left media-middle">
+    <a href="#">
+      <img class="media-object" ng-src="{{book.thumbnail}}">
+    </a>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading">{{book.title}}</h4>
+       <p ng-hide="moreInfo">{{book.description | limitTo:200}}... <br/>
+	 <a href="#" ng-click="showMore()">More >> </a>
+    </p>
+       <p ng-show="moreInfo">{{book.description}}<br/>
+	 <a href="#" ng-click="showMore()"> << Less</a>
+    </p>
+    <p>{{book.authors}}</p>
+    <p>
+     <button class="btn btn-primary" type="button">
+       Average Rating <span class="badge">{{book.averageRating}}</span>
+     </button>
+    </p>
+  </div>
+</div>
+   </div>
