@@ -1,6 +1,6 @@
 # angularapp
 About the application -
-This is a basic angular application using google book api. I have used important angular features like Directive, Factory, Services in the application.
+This is a basic angular application using google book api. I have used important angular features like Directive, Factory, Services in this application.
 
 Installation -
 
